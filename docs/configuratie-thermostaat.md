@@ -65,6 +65,10 @@ Op display-builds kan OpenAmber Bluetooth LE temperatuur-/vochtigheidssensoren g
 
 Naast de bedrade aansluiting kan OpenAmber via ESP-NOW draadloos met een OpenAmber-thermostaat communiceren: temperaturen, setpoints en modus worden gedeeld en setpoint-/moduscommando's van de thermostaat worden uitgevoerd. Verkeer is versleuteld en voorzien van rollende codes tegen herhaling (replay).
 
+::: warning Standaard gedeactiveerd in Home Assistant
+De onderstaande entiteiten zijn standaard gedeactiveerd in Home Assistant (`disabled_by_default`). Zet ze aan via **Instellingen → Entiteiten** (toon uitgeschakelde entiteiten), of gebruik de schakelaar op het display bij **Thermostaat > Algemeen** (pagina 2).
+:::
+
 | Instelling | Opties / Bereik | Standaard | Home Assistant entiteit | Beschrijving |
 | :-- | :-- | :-- | :-- | :-- |
 | **Draadloze thermostaat** | Aan / Uit | Uit | `switch.thermostat_link_enabled` | Zet de ESP-NOW thermostaatlink aan (Algemeen, pagina 2). Bij de eerste inschakeling genereert OpenAmber een 6-cijferige koppelcode die op de thermostaat moet worden ingevoerd. Werkte alleen wanneer **Thermostaat bron** op `Intern` staat. |

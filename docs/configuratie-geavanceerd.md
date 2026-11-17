@@ -85,13 +85,17 @@ Deze instellingen worden direct gecommuniceerd met de EEPROM holding registers v
 | :-- | :-- | :-- | :-- | :-- |
 | **Bodemplaat** | Onbekend / Buitentemperatuur / Tijdens defrost | Tijdens defrost | `select.bottomplate_heater_mode` | Bepaalt wanneer het lekbakelement inschakelt (register 3236). Bij `Tijdens defrost` schakelt het element in zodra de ontdooicyclus start en stopt het 2 minuten na afloop. Bij `Buitentemperatuur` schakelt het in onder de ingestelde buitentemperatuur. |
 | **Starttemperatuur bodemplaat** | -10 t/m 10 °C (stap 1) | 4 °C *(34 raw)* | `number.bottomplate_heater_ambient_temperature_start` | Buitentemperatuurdrempel waaronder het bodemplaatelement inschakelt in buitentemperatuurmodus (register 3237, raw waarde = T + 30). |
-| **Stop-hysterese bodemplaat** | 1 t/m 10 °C (stap 1) | 3 °C | `number.bottomplate_heater_ambient_hysteresis_stop` | Hysterese voor het uitschakelen van de bodemplaatverwarming (register 3238). Uitschakeling vindt plaats bij `Starttemperatuur + Hysterese`. |
+| **Stop-hysterese bodemplaat** | 1 t/m 10 °C (stap 1) | 3 °C | `number.bottomplate_heater_ambient_hysteresis_stop` | Hysterese voor het uitschakelen van de bodemplaatverwarming (register 3238). Uitschakeling vindt plaats bij `Starttemperatuur + Hysterese`. Deze entiteit is standaard gedeactiveerd in Home Assistant. |
 
 ---
 
 ## Categorie: Defrost
 
 De ontdooiparameters regelen het gedrag van de buitenunit bij rijpvorming op de verdamper. Deze waarden corresponderen direct met de holding registers van de buitenunit.
+
+::: warning Standaard gedeactiveerd in Home Assistant
+De entiteiten in deze tabel zijn standaard gedeactiveerd in Home Assistant (`disabled_by_default`). Zet ze aan via **Instellingen → Entiteiten** (toon uitgeschakelde entiteiten) om ze te gebruiken.
+:::
 
 ![Defrost](/images/instellingen-geavanceerd-defrost-1.jpg)
 ![Defrost](/images/instellingen-geavanceerd-defrost-2.jpg)
