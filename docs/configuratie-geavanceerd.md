@@ -104,3 +104,16 @@ De ontdooiparameters regelen het gedrag van de buitenunit bij rijpvorming op de 
 | **Defrost starttemperatuur 2** | -3.0 t/m 3.0 °C (stap 0.1) | 0.0 °C | `number.enter_defrost_temperature_2` | Secundaire ontdooitemperatuurdrempel (register 3336). |
 | **Defrost starttemperatuur 3** | -10.0 t/m -3.0 °C (stap 0.1) | -5.0 °C | `number.enter_defrost_temperature_3` | Derde ontdooitemperatuurdrempel voor lage omgevingstemperaturen (register 3337). |
 | **Defrost starttemperatuur 4** | -10.0 t/m -3.0 °C (stap 0.1) | -7.0 °C | `number.enter_defrost_temperature_4` | Vierde ontdooitemperatuurdrempel voor strenge vorstcondities (register 3338). |
+
+---
+
+## Categorie: Compressor
+
+| Instelling | Opties / Bereik | Standaard | Home Assistant entiteit | Beschrijving |
+| :-- | :-- | :-- | :-- | :-- |
+| **Compressor hysterese** | 0.1 t/m 2.0 °C (stap 0.1) | 1.0 °C | `number.compressor_hysteresis` | Zolang de regeltemperatuur binnen deze afstand van het setpoint blijft, wordt de huidige compressorstand vastgehouden. Voorkomt dat de PID-uitgang binnen de deadband de compressor tussen twee aangrenzende vermogensstanden laat schakelen. |
+| **Buitenunit optimalisaties** | Aan / Uit | Uit | `switch.outdoor_unit_optimizations_enabled` | Schrijft bij het starten de OpenAmber-frequentietabel naar het RAM van de buitenunit (level 1 t/m 10: verwarmen 20/28/36/43/55/63/72/79/85/90 Hz, koelen 20/26/30/36/43/48/55/69/74/82 Hz) en schakelt de eigen begrenzing van de unit per buitentemperatuur uit; OpenAmber past die begrenzing dan zelf toe. De lagere lage-stand frequenties geven meer regelruimte bij licht belaste systemen. Wordt overgeslagen bij HPS-buitenunits. |
+
+::: tip Standaard frequentietabel
+Staat **Buitenunit optimalisaties** uit (fabrieksstandaard), dan blijft de standaard frequentietabel van de buitenunit actief; de Hz-waarden per vermogensstand hangen dan af van de firmware van de buitenunit. De vermogensstanden begrenzen altijd alleen het maximum; de PID regelt daarbinnen.
+:::
