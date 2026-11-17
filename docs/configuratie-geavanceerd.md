@@ -101,9 +101,9 @@ De ontdooiparameters regelen het gedrag van de buitenunit bij rijpvorming op de 
 | **Exit defrost temperatuur** | 0 t/m 25 °C (stap 1) | 17 °C *(47 raw)* | `number.exit_defrost_temperature` | Temperatuur van de buitenwarmtewisselaar waarop de ontdooicyclus als voltooid wordt beschouwd en de vierwegklep terugschakelt naar verwarmen (register 3277, raw waarde = T + 30). |
 | **Maximale ontdooitijd** | 1 t/m 30 min (stap 1) | 8 min | `number.max_defrost_time` | Maximale tijdsduur van een ontdooicyclus ter beveiliging tegen vastlopende defrost-cycli (register 3278). |
 | **Defrost starttemperatuur 1** | -15 t/m 5 °C (stap 1) | -3 °C *(27 raw)* | `number.enter_defrost_temperature` | Primaire temperatuurdrempel van de verdamper om de automatische ontdooiprocedure te starten (register 3276, raw waarde = T + 30). |
-| **Defrost starttemperatuur 2** | -3.0 t/m 3.0 °C (stap 0.1) | 0.0 °C | `number.enter_defrost_temperature_2` | Secundaire ontdooitemperatuurdrempel (register 3336). |
-| **Defrost starttemperatuur 3** | -10.0 t/m -3.0 °C (stap 0.1) | -5.0 °C | `number.enter_defrost_temperature_3` | Derde ontdooitemperatuurdrempel voor lage omgevingstemperaturen (register 3337). |
-| **Defrost starttemperatuur 4** | -10.0 t/m -3.0 °C (stap 0.1) | -7.0 °C | `number.enter_defrost_temperature_4` | Vierde ontdooitemperatuurdrempel voor strenge vorstcondities (register 3338). |
+| **Defrost starttemperatuur 2** | -15 t/m 0 °C (stap 1) | -3 °C *(27 raw)* | `number.enter_defrost_temperature_2` | Secundaire ontdooitemperatuurdrempel van de verdamper, geldend bij buitentemperaturen tussen -3 en 3 °C (register 3336, raw waarde = T + 30). |
+| **Defrost starttemperatuur 3** | -15 t/m 0 °C (stap 1) | -5 °C *(25 raw)* | `number.enter_defrost_temperature_3` | Derde ontdooitemperatuurdrempel, geldend bij buitentemperaturen tussen -10 en -3 °C (register 3337, raw waarde = T + 30). |
+| **Defrost starttemperatuur 4** | -15 t/m 0 °C (stap 1) | -12 °C *(18 raw)* | `number.enter_defrost_temperature_4` | Vierde ontdooitemperatuurdrempel voor strenge vorst (Ta < -10 °C) (register 3338, raw waarde = T + 30). |
 
 ---
 
